@@ -1,0 +1,46 @@
+<body>
+<div class="row">
+	<div id="nav-left" class="span3">
+		<ul class="nav nav-tabs nav-stacked">
+			<li><a href="./index.html">User Center</a></li>   <!--跳转至用户中心-->
+			<!--<li class="active">这里的active使该条目呈白色，以说明在当前选项页面中<a href="javascript:void(0);">Transaction Record</a></li> -->
+			<li><a href="./transactions.html">Transaction Record</a></li>
+		</ul>
+	</div>
+	
+	<div class="span9">
+		<div style="text-align:center; font-size:30px; height:60px">
+			<p>
+				<b>Consumer Complaint</b>
+			</p>
+		</div>
+		
+		<form class="form-horizontal">
+			<div class="control-group">
+				<label class="control-label" for="inputOrderNum">Order Number</label>
+				<div class="controls">
+					<input type="text" id="inputOrderNum">
+				</div>
+			</div>
+			<div class="control-group">
+				<label class="control-label" for="inputReason">Reason</label>
+				<div class="controls">
+					<textarea style="width:80%; height:350px" id="inputReason"></textarea>
+				</div>
+			</div>
+		</form>
+
+		<p style="text-align:center;"> <!--按钮居中-->
+			<!--点击按钮，出发cli函数，即弹出一个对话框-->
+			<button id="sumbit" type="button" class="btn btn-small btn-primary" onclick="cli()">提交</button>
+			<a href="./order.html" class="btn btn-small btn-primary">返回</a>
+		</p>
+	</div>
+</div>
+<script type="text/javascript">
+	function cli(){
+		alert("提交成功！");
+	}
+</script>
+</body>
+</html>
