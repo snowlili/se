@@ -2,28 +2,28 @@
 <div class="row">
 	<div id="nav-left" class="span3">
 		<ul class="nav nav-tabs nav-stacked">
-			<li><a href="../User/index.html">User Center</a></li>
+			<li><a href="./User/index.html">User Center</a></li>
 			<li class="active"><a href="javascript:void(0);">Transaction Record</a></li>
 		</ul>
 	</div>
 	<div class="span8">
 		<form class="well" method="post" action="">
 			<font size=2 face="黑体">  开始日期: </font>
-			<input id = "datepicker" class="span2" size="16" type="text">
+			<input class="span2" size="16" type="text" placeholder="yyyy-mm-dd" name="starttime">
 			<font size=2 face="黑体">  结束日期: </font>
-			<input id = "datepicker2" class="span2" size="16" type="text">
+			<input class="span2" size="16" type="text" placeholder="yyyy-mm-dd"name="endtime">
 			<br>
 			<font size=2 face="黑体">  类型: </font>
 			<font size=1 face="黑体">  未付款 </font>
-			<input class="boolean optional" type="checkbox" name="checktype[]" value="1">
+			<input class="boolean optional" type="checkbox" name="checktype[]" value="1" checked>
 			<font size=1 face="黑体">  已付款 </font>
-			<input class="boolean optional" type="checkbox" name="checktype[]" value="2">
+			<input class="boolean optional" type="checkbox" name="checktype[]" value="2" checked>
 			<font size=1 face="黑体">  已发货 </font>
-			<input class="boolean optional" type="checkbox" name="checktype[]" value="3">
+			<input class="boolean optional" type="checkbox" name="checktype[]" value="3" checked>
 			<font size=1 face="黑体">  已完成 </font>
-			<input class="boolean optional" type="checkbox" name="checktype[]" value="4">
+			<input class="boolean optional" type="checkbox" name="checktype[]" value="4" checked>
 			<font size=1 face="黑体">  已退款 </font>
-			<input class="boolean optional" type="checkbox" name="checktype[]" value="5">
+			<input class="boolean optional" type="checkbox" name="checktype[]" value="5" checked>
 			<input type="submit" class="btn" value="搜索">
 		</form>
 	</div>
@@ -43,13 +43,13 @@
 			<tbody>
 			<volist id="transaction" name="transactions">
 				<tr>
-					<td>{$transaction.TID}</td>
-					<td>{$transaction.SUID}</td>
-					<td>{$transaction.BUID}</td>
-					<td>{$transaction.OID}</td>
+					<td>{$transaction.NO}</td>
+					<td>{$transaction.SELLER}</td>
+					<td>{$transaction.BUYER}</td>
+					<td>{$transaction.PRODUCT}</td>
 					<td>{$transaction.TIMESTAMP}</td>
 					<td>{$transaction.PRICE}</td>
-					<td>{$transaction.STATUS}</td>
+					<td><a href="./order/TID/{$transaction.NO}">{$transaction.STATUS}</a></td>
 				</tr>
 			</volist>
 			</tbody>
