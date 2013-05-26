@@ -1,3 +1,20 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Order Infomation</title>  <!--订单信息-->
+	<link rel="stylesheet" href="../Public/css/bootstrap.min.css">
+	<link rel="stylesheet" href="../Public/css/bootstrap-responsive.min.css">
+	<link rel="stylesheet" href="../Public/css/common.css">
+	<script src="../Public/js/jquery-1.9.1.min.js"></script>
+	<script src="../Public/js/bootstrap.min.js"></script>
+	<script src="../Public/js/common.js"></script>
+	<script>
+		var ROOT = '__APP__';
+	</script>
+</head>
+<body>
 <div class="row">
 	<div id="nav-left" class="span3">
 		<ul class="nav nav-tabs nav-stacked">
@@ -25,10 +42,10 @@
 				<script type="text/javascript">
 				for (var i = 0; i <= 5; i++)
 				{
-					document.write("<tr>")
-					document.write("<th>Prdocut</th>")
-					document.write("<td>{td}</td>")
-					document.write("</tr>")
+					document.write("<tr>");
+					document.write("<th>Prdocut</th>");
+					document.write("<td>{td}</td>");
+					document.write("</tr>");
 				}
 				</script>
 			</p>
@@ -40,6 +57,17 @@
 				<th>Status</th>
 				<td>{$}</td>
 			</tr>
+			<!--<tbody>
+			<volist id="transaction" name="transactions">
+				<tr>
+					<td>{$transaction.SELLER}</td>
+					<td>{$transaction.PRODUCT}</td>
+					<td>{$transaction.TIME|date="Y-m-d H:i", ###}</td>
+					<td>{$transaction.PRICE}</td>
+					<td>{$transaction.STATUS}</td>
+				</tr>
+			</volist>
+			</tbody>-->
 		</table>
 		<p style="text-align:center;"> <!--按钮居中-->
 			<a id="com_res" href="./complaint_result.html" class="btn btn-small btn-primary" type="button">投诉结果查询</a>
@@ -52,3 +80,5 @@
 		var cureentbtn = document.getElementById("com_res").style.display = "none";
 	};
 </script>
+</body>
+</html>
